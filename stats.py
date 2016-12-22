@@ -33,10 +33,17 @@ def median(data):
     assert isinstance(answer, numbers.Number), "Median will return a number."
     return answer
 
-def range(data):
+def range_(data):
     """Finds ths range of a list of numbers, a simple measure of variance.
     See: https://www.mathsisfun.com/definitions/range-statistics-.html"""
-    pass
+    #preconditions
+    assert isinstance(data, collections.Iterable), "Must be iterable."
+    for num in data:
+        assert isinstance(num, numbers.Number), "We need numbers yo."
+    assert len(data) > 1, "Please enter at least 2 numbers to calculate range."
+    #function
+    #postcondition
+    assert isinstance(answer, numbers.Number), "Median will return a number."
 
 def standard_deviation(data):
     """Finds the standard deviation of a list of numbers, a measure of variance.
