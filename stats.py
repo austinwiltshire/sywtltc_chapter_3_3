@@ -2,6 +2,7 @@
 
 import numbers
 import collections
+import statistics
 
 def mean(data):
     """Takes the mean/average of a list of numbers, a simple measure of 'middle'.
@@ -27,8 +28,10 @@ def median(data):
     assert len(data) > 2, "Please enter at least 3 numbers to calculate median."
     assert sorted(data) == data, "Numbers must be in order smallest to largest."
     #function
+    answer = statistics.median(data)
     #postconditions
     assert isinstance(answer, numbers.Number), "Median will return a number."
+    return answer
 
 def range(data):
     """Finds ths range of a list of numbers, a simple measure of variance.
