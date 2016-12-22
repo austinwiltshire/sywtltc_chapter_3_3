@@ -7,20 +7,28 @@ def mean(data):
     """Takes the mean/average of a list of numbers, a simple measure of 'middle'.
     See: https://en.wikipedia.org/wiki/Arithmetic_mean"""
     #preconditions
-    assert isinstance(data, collections.Iterable), "Must be iterable"
+    assert isinstance(data, collections.Iterable), "Must be iterable."
     for num in data:
         assert isinstance(num, numbers.Number), "We need numbers yo."
-    assert len(data) > 1, "Please enter at least 2 numbers to be averaged"
+    assert len(data) > 1, "Please enter at least 2 numbers to be averaged."
     #function
     answer = (sum(data) / len(data))
     #postconditions
-    assert isinstance(answer, numbers.Number), "Mean will return a number"
+    assert isinstance(answer, numbers.Number), "Mean will return a number."
     return answer
 
 def median(data):
     """Finds the median or middle of a list of sorted numbers, a simple measure of 'middle'.
     See: https://en.wikipedia.org/wiki/Median"""
-    pass
+    #preconditions
+    assert isinstance(data, collections.Iterable), "Must be iterable."
+    for num in data:
+        assert isinstance(num, numbers.Number), "We need numbers yo."
+    assert len(data) > 2, "Please enter at least 3 numbers to calculate median."
+    assert sorted(data) == data, "Numbers must be in order smallest to largest."
+    #function
+    #postconditions
+    assert isinstance(answer, numbers.Number), "Median will return a number."
 
 def range(data):
     """Finds ths range of a list of numbers, a simple measure of variance.
