@@ -44,7 +44,7 @@ def range_(data):
     #function
     answer = max(data) - min(data)
     #postcondition
-    assert isinstance(answer, numbers.Number), "Median will return a number."
+    assert isinstance(answer, numbers.Number), "Range will return a number."
     assert max(data) - answer == min(data), "The max  minus the answer should = lowest number."
     return answer
 
@@ -60,5 +60,5 @@ def standard_deviation(data):
     answer = statistics.stdev(data)
     rounded_answer = round(answer, 5)
     #postconditions
-    assert isinstance(rounded_answer, numbers.Number), "Median will return a number."
+    assert isinstance(rounded_answer, numbers.Number), "Standard Deviation will return a number."
     return rounded_answer
