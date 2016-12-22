@@ -21,8 +21,14 @@ def test_median():
     assert stats.median(D) == 3.0
     assert stats.median(E) == 50
 
-def test_range():
+def test_range_():
     """Tests the range function"""
-    assert stats.range(A) == 4.0
-    assert stats.range(B) == 20.0
-    assert stats.range(C) == 130.0
+    assert stats.range_(A) == 4.0
+    assert stats.range_(B) == 10.0
+    assert stats.range_(C) == 130.0
+
+def test_standard_deviation():
+    """Tests the SD function"""
+    assert stats.standard_deviation(A) == 2.0
+    assert stats.standard_deviation(B) == 7.07107
+    assert stats.standard_deviation(E) == 38.34058
