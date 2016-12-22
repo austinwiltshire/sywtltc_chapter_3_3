@@ -57,8 +57,8 @@ def standard_deviation(data):
         assert isinstance(num, numbers.Number), "We need numbers yo."
     assert len(data) > 1, "Please enter at least 2 numbers to calculate standard deviation."
     #function
+    answer = statistics.stdev(data)
+    rounded_answer = round(answer, 5)
     #postconditions
-    assert isinstance(answer, numbers.Number), "Median will return a number."
-
-
-
+    assert isinstance(rounded_answer, numbers.Number), "Median will return a number."
+    return rounded_answer
