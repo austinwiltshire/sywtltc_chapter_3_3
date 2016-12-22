@@ -2,8 +2,13 @@
 
 import stats
 
+A = [2, 4, 6]
+B = [10, 20]
+C = [50, 100, 180, 70]
+
+
 def test_mean():
     """Tests the mean function"""
-    assert stats.mean([5, 5, 5]) == 5
-    assert stats.mean([100, 50]) == 75
-    assert stats.mean([10, 20, 30, 40, 50]) == 30
+    assert stats.mean(A) == 4.0
+    assert stats.mean(B) == 15.0
+    assert stats.mean(C) == 100.0
