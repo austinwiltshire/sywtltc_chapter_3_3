@@ -42,10 +42,23 @@ def range_(data):
         assert isinstance(num, numbers.Number), "We need numbers yo."
     assert len(data) > 1, "Please enter at least 2 numbers to calculate range."
     #function
+    answer = max(data) - min(data)
     #postcondition
     assert isinstance(answer, numbers.Number), "Median will return a number."
+    assert max(data) - answer == min(data), "The max  minus the answer should = lowest number."
+    return answer
 
 def standard_deviation(data):
     """Finds the standard deviation of a list of numbers, a measure of variance.
     See: https://www.mathsisfun.com/data/standard-deviation-formulas.html"""
-    pass
+    #preconditions
+    assert isinstance(data, collections.Iterable), "Must be iterable."
+    for num in data:
+        assert isinstance(num, numbers.Number), "We need numbers yo."
+    assert len(data) > 1, "Please enter at least 2 numbers to calculate standard deviation."
+    #function
+    #postconditions
+    assert isinstance(answer, numbers.Number), "Median will return a number."
+
+
+
