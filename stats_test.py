@@ -20,3 +20,9 @@ def test_median():
     assert stats.median(A) == 4.0
     assert stats.median(D) == 3.0
     assert stats.median(E) == 50
+
+def test_range():
+    """Tests the range function"""
+    assert stats.range(A) == 4.0
+    assert stats.range(B) == 20.0
+    assert stats.range(C) == 130.0
