@@ -2,7 +2,7 @@
 
 import numbers
 import collections
-import statistics
+import math
 
 def mean(number_list):
     """Takes the mean/average of a list of numbers, a simple measure of 'middle'.
@@ -30,7 +30,7 @@ def median(number_list):
     assert len(number_list) > 2, "Please enter at least 3 numbers to calculate median."
     assert sorted(number_list) == number_list, "Numbers must be in order smallest to largest."
     #function
-    answer = statistics.median(number_list)
+    answer = sorted(number_list)[len(number_list)//2]
     #postconditions
     assert isinstance(answer, numbers.Number), "Median will return a number."
     assert answer > min(number_list), "Median should be higher than lowest number in list."
@@ -61,10 +61,10 @@ def standard_deviation(number_list):
         assert isinstance(num, numbers.Number), "We need numbers yo."
     assert len(number_list) > 1, "Please enter at least 2 numbers to calculate standard deviation."
     #function
-    answer = statistics.stdev(number_list)
+    mean_ = mean(number_list)
+    variance = sum([(e-mean_) ** 2 for e in number_list]) / len(number_list)
+    answer = math.sqrt(variance)
     rounded_answer = round(answer, 5)
     #postconditions
-    assert isinstance(rounded_answer, numbers.Number), "Standard Deviation will return a number."
-    assert rounded_answer > min(number_list), "SD should be higher than lowest number in list."
-    assert rounded_answer < max(number_list), "SD should be lower than highest number in list."
+    assert isinstance(rounded_answer, numbers.Number), "Standard Deviation will return number."
     return rounded_answer

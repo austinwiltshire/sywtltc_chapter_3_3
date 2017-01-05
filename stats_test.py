@@ -29,6 +29,6 @@ def test_range_():
 
 def test_standard_deviation():
     """Tests the SD function"""
-    assert stats.standard_deviation(A) == 2.0
-    assert stats.standard_deviation(B) == 7.07107
-    assert stats.standard_deviation(E) == 38.34058
+    assert stats.standard_deviation(A) == 1.63299
+    assert stats.standard_deviation(B) == 5.0
+    assert stats.standard_deviation(E) == 34.29286
