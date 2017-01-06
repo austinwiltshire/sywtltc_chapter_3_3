@@ -62,9 +62,10 @@ def standard_deviation(number_list):
     assert len(number_list) > 1, "Please enter at least 2 numbers to calculate standard deviation."
     #function
     mean_ = mean(number_list)
-    variance = sum([(e-mean_) ** 2 for e in number_list]) / len(number_list)
+    variance = sum([(e-mean_) ** 2 for e in number_list]) / (len(number_list) - 1)
     answer = math.sqrt(variance)
     rounded_answer = round(answer, 5)
     #postconditions
     assert isinstance(rounded_answer, numbers.Number), "Standard Deviation will return number."
+    assert (max(number_list) - min(number_list)) > rounded_answer, "Range should be larger than SD."
     return rounded_answer
