@@ -9,8 +9,7 @@ def mean(number_list):
     See: https://en.wikipedia.org/wiki/Arithmetic_mean"""
     #preconditions
     assert isinstance(number_list, collections.Iterable), "Must be iterable."
-    for num in number_list:
-        assert isinstance(num, numbers.Number), "We need numbers yo."
+    assert all(isinstance(x, numbers.Number) for x in number_list), "Must be numbers."
     #function
     answer = (sum(number_list) / len(number_list))
     #postconditions
@@ -24,8 +23,7 @@ def median(number_list):
     See: https://en.wikipedia.org/wiki/Median"""
     #preconditions
     assert isinstance(number_list, collections.Iterable), "Must be iterable."
-    for num in number_list:
-        assert isinstance(num, numbers.Number), "We need numbers yo."
+    assert all(isinstance(x, numbers.Number) for x in number_list), "Must be numbers."
     assert sorted(number_list) == number_list, "Numbers must be in order smallest to largest."
     #function
     srtd = sorted(number_list)
@@ -45,8 +43,7 @@ def range_(number_list):
     See: https://www.mathsisfun.com/definitions/range-statistics-.html"""
     #preconditions
     assert isinstance(number_list, collections.Iterable), "Must be iterable."
-    for num in number_list:
-        assert isinstance(num, numbers.Number), "We need numbers yo."
+    assert all(isinstance(x, numbers.Number) for x in number_list), "Must be numbers."
     assert len(number_list) > 1, "Please enter at least 2 numbers to calculate range."
     #function
     answer = max(number_list) - min(number_list)
@@ -60,8 +57,7 @@ def standard_deviation(number_list):
     See: https://www.mathsisfun.com/number_list/standard-deviation-formulas.html"""
     #preconditions
     assert isinstance(number_list, collections.Iterable), "Must be iterable."
-    for num in number_list:
-        assert isinstance(num, numbers.Number), "We need numbers yo."
+    assert all(isinstance(x, numbers.Number) for x in number_list), "Must be numbers."
     assert len(number_list) > 1, "Please enter at least 2 numbers to calculate standard deviation."
     #function
     mean_ = mean(number_list)
