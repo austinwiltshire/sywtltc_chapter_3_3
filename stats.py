@@ -11,13 +11,12 @@ def mean(number_list):
     assert isinstance(number_list, collections.Iterable), "Must be iterable."
     for num in number_list:
         assert isinstance(num, numbers.Number), "We need numbers yo."
-    assert len(number_list) > 1, "Please enter at least 2 numbers to be averaged."
     #function
     answer = (sum(number_list) / len(number_list))
     #postconditions
     assert isinstance(answer, numbers.Number), "Mean will return a number."
-    assert answer > min(number_list), "Mean should be higher than lowest number in list."
-    assert answer < max(number_list), "Mean should be lower than highest number in list."
+    assert answer >= min(number_list), "Mean should be higher or equal lowest number in list."
+    assert answer <= max(number_list), "Mean should be lower or equal highest number in list."
     return answer
 
 def median(number_list):
@@ -27,14 +26,18 @@ def median(number_list):
     assert isinstance(number_list, collections.Iterable), "Must be iterable."
     for num in number_list:
         assert isinstance(num, numbers.Number), "We need numbers yo."
-    assert len(number_list) > 2, "Please enter at least 3 numbers to calculate median."
     assert sorted(number_list) == number_list, "Numbers must be in order smallest to largest."
     #function
-    answer = sorted(number_list)[len(number_list)//2]
+    srtd = sorted(number_list)
+    mid = len(number_list)//2
+    if len(number_list) % 2 == 0:
+        answer = (srtd[mid-1] + srtd[mid]) / 2.0
+    else:
+        answer = srtd[mid]
     #postconditions
     assert isinstance(answer, numbers.Number), "Median will return a number."
-    assert answer > min(number_list), "Median should be higher than lowest number in list."
-    assert answer < max(number_list), "Median should be lower than highest number in list."
+    assert answer >= min(number_list), "Median should be >= lowest number in list."
+    assert answer <= max(number_list), "Median should be <= highest number in list."
     return answer
 
 def range_(number_list):

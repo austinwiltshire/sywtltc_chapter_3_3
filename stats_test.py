@@ -7,6 +7,8 @@ B = [10, 20]
 C = [50, 100, 180, 70]
 D = [1, 2, 3, 4, 5]
 E = [10, 20, 50, 80, 100]
+F = [1, 1, 1]
+G = [1, 2, 3, 4, 5, 6]
 
 
 def test_mean():
@@ -14,12 +16,15 @@ def test_mean():
     assert stats.mean(A) == 4.0
     assert stats.mean(B) == 15.0
     assert stats.mean(C) == 100.0
+    assert stats.mean(F) == 1.0
 
 def test_median():
     """Tests the median function"""
     assert stats.median(A) == 4.0
     assert stats.median(D) == 3.0
     assert stats.median(E) == 50
+    assert stats.median(F) == 1.0
+    assert stats.median(G) == 3.5
 
 def test_range_():
     """Tests the range function"""
